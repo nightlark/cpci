@@ -18,18 +18,21 @@ jobs:
 
   # Linux only
   - bash: |
-      echo "This is only shown on Linux"
+      echo "This is only run on Linux"
+      echo "Dependencies could be installed with apt-get"
     condition: eq( variables['Agent.OS'], 'Linux' )
     displayName: 'Run on Linux'
 
   # macOS only
   - bash: |
-      echo "This is only shown on Windows"
+      echo "This is only run on macOS"
+      echo "Dependencies could be installed with homebrew"
     condition: eq( variables['Agent.OS'], 'Darwin' )
     displayName: 'Run on macOS'
 
   # Windows only
   - bash: |
-      echo "This is only shown on Windows"
+      echo "This is only run on Windows"
+      echo "Dependencies could be installed with choco"
     displayName: 'Run on Windows'
     condition: eq( variables['Agent.OS'], 'Windows_NT' )
